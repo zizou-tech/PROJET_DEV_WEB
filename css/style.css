@@ -1,0 +1,359 @@
+/* --- Variables CSS pour une gestion facile des couleurs --- */
+:root {
+    --noir-profond: #1A1A1A;
+    --gris-fonce: #2C2C2C;
+    --gris-moyen: #555555;
+    --gris-clair: #AAAAAA;
+    --blanc-pur: #FFFFFF;
+    --accent-or: #D4AF37; /* Ou #C0C0C0 pour argent */
+    --accent-rouge: #CC0000; /* Pour les alertes ou détails importants */
+    --font-principal: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-titre: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Police plus classique pour les titres */
+}
+
+/* --- Styles Généraux --- */
+/* --- Styles Généraux --- */
+body {
+    font-family: var(--font-principal);
+    margin: 0;
+    padding: 0;
+    
+    /* NOUVELLE IMAGE DE FOND */
+    background-image: url('../image/backm.jpg'); /* Le chemin vers ton image "backm.jpg" */
+    background-size: cover; /* L'image couvrira toute la zone, sans répétition */
+    background-position: center center; /* Centre l'image */
+    background-attachment: fixed; /* L'image reste fixe quand on défile */
+    background-color: var(--noir-profond); /* Couleur de secours si l'image ne charge pas */
+    
+    color: var(--gris-clair);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* On ajoute un calque sombre par-dessus l'image pour que le texte reste lisible */
+body::before {
+    content: "";
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);  /* Calque noir semi-transparent (60% d'opacité) */
+    z-index: -1; /* Place le calque derrière le contenu */
+}
+
+/* IMPORTANT : Assure-toi que ton "main" et ton "header/footer" ont un fond solide
+   pour ne pas être transparents et laisser apparaître l'image en dessous de manière non désirée.
+   Ces styles sont déjà dans ton CSS actuel :
+*/
+header {
+    background-color: var(--gris-fonce); 
+    /* ... */
+}
+main {
+    background-color: var(--gris-fonce); 
+    /* ... */
+}
+footer {
+    background-color: var(--gris-fonce); 
+    /* ... */
+}
+
+a {
+    color: var(--accent-or);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--blanc-pur);
+    text-decoration: underline;
+}
+
+/* --- Header et Navigation --- */
+header {
+    background-color: var(--gris-fonce);
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.logo a {
+    font-family: var(--font-titre);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-or);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 20px;
+    padding: 5px 0;
+}
+
+nav ul li a {
+    color: var(--blanc-pur);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--gris-moyen);
+    color: var(--blanc-pur);
+    text-decoration: none;
+}
+
+/* --- Main Content Area --- */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: var(--gris-fonce); /* Fond du contenu */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-titre);
+    color: var(--accent-or);
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+
+p {
+    margin-bottom: 15px;
+    color: var(--gris-clair);
+}
+
+/* --- Forms --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    border: 1px solid var(--gris-moyen);
+    border-radius: 10px;
+    /* Couleur de fond semi-transparente pour le formulaire entier */
+    background-color: rgba(44, 44, 44, 0.7) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--blanc-pur); /* Assure une bonne lisibilité sur le fond transparent */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="datetime-local"],
+textarea,
+select {
+    width: calc(100% - 22px); /* Ajuste la largeur pour le padding et la bordure */
+    padding: 12px;
+    border: 1px solid var(--gris-moyen);
+    border-radius: 5px;
+    font-size: 1rem;
+    /* Couleur de fond semi-transparente pour les champs de saisie */
+    background-color: rgba(44, 44, 44, 0.7) !important;
+    color: var(--blanc-pur); /* Assure une bonne lisibilité du texte tapé */
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent-or); /* Bordure accentuée au focus */
+    outline: none; /* Supprime l'outline par défaut du navigateur */
+}
+
+textarea {
+    resize: vertical; /* Permet le redimensionnement vertical */
+    min-height: 100px; /* Hauteur minimale du textarea */
+}
+
+button[type="submit"] {
+    background-color: var(--accent-or);
+    color: var(--noir-profond);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--blanc-pur);
+    color: var(--noir-profond);
+}
+/* --- Messages (Success/Error) --- */
+.message-success {
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    background-color: #3C763D; /* Vert plus foncé */
+    color: #DFF0D8; /* Vert clair */
+    border: 1px solid #3C763D;
+}
+
+.message-error {
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    background-color: #A94442; /* Rouge plus foncé */
+    color: #F2DEDE; /* Rouge clair */
+    border: 1px solid #A94442;
+}
+
+
+/* --- Tables (Admin, Appointments) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--noir-profond);
+    border: 1px solid var(--gris-moyen);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--gris-moyen);
+    color: var(--gris-clair);
+}
+
+table th {
+    background-color: var(--gris-fonce);
+    color: var(--accent-or);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover effect for table rows */
+table tbody tr:hover {
+    background-color: var(--gris-moyen);
+    cursor: pointer;
+}
+
+.delete-btn, .delete-appointment-btn {
+    background-color: var(--accent-rouge);
+    color: var(--blanc-pur);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover, .delete-appointment-btn:hover {
+    background-color: #990000;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--gris-fonce);
+    color: var(--gris-clair);
+    margin-top: 50px;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    main {
+        padding: 30px 15px;
+        margin: 20px auto;
+    }
+    .logo a {
+        font-size: 2rem;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    nav ul li a {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    form {
+        max-width: 90%;
+        padding: 20px;
+    }
+    h1 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 1.8rem;
+    }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+    button[type="submit"] {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+    table th, table td {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+}
