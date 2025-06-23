@@ -41,27 +41,27 @@ Développement d’un système sécurisé de gestion des comptes utilisateur, av
      - includes/db_connect.php → Connexion sécurisée via PDO.
 
     Fonctions Utiles :
-     -includes/functions.php → Fonctions réutilisables :
+     includes/functions.php → Fonctions réutilisables :
 
-        . redirect()
+        - redirect()
 
-        . isAuthenticated()
+        - isAuthenticated()
 
-        . isAdmin()
+        - isAdmin()
 
-   - Inscription / Connexion / Déconnexion :
+    - Inscription / Connexion / Déconnexion :
 
-        . register.php → Inscription + hachage des mots de passe (password_hash()).
+        - register.php → Inscription + hachage des mots de passe (password_hash()).
 
-        . login.php → Connexion + vérification (password_verify()), gestion des sessions ($_SESSION).
+        - login.php → Connexion + vérification (password_verify()), gestion des sessions ($_SESSION).
 
-        . logout.php → Déconnexion sécurisée.
+        - logout.php → Déconnexion sécurisée.
 
    - Gestion des Accès :
 
-        . Redirections selon le statut de l'utilisateur (authentifié / admin).
+        - Redirections selon le statut de l'utilisateur (authentifié / admin).
 
-        . admin.php → Gestion des utilisateurs via interface admin.
+        - admin.php → Gestion des utilisateurs via interface admin.
 
     3. 🧠 Logique Backend des Interactions Simples :
    
