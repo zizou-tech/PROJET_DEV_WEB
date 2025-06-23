@@ -1,8 +1,8 @@
-🎯 Responsabilités & Contributions
+ Responsabilités & Contributions
 J'ai été responsable de la mise en place complète de l'infrastructure de la base de données ainsi que du développement du système d’authentification des utilisateurs. J'ai également conçu la logique backend permettant des interactions simples et efficaces avec les utilisateurs.
 
-🧩 Contributions Techniques
-1. 📦 Conception & Création de la Base de Données (MySQL)
+ Contributions Techniques
+1.  Conception & Création de la Base de Données (MySQL)
 J'ai conçu et implémenté la structure complète de la base de données monsite_db, essentielle au fonctionnement du site.
 
  Tables Principales :
@@ -34,7 +34,7 @@ J'ai conçu et implémenté la structure complète de la base de données monsit
 
     -Requêtes pour mise à jour d’images, réinitialisation de mot de passe, etc.
 
-2. 🔐 Système d’Authentification (PHP)
+2.  Système d’Authentification (PHP)
 Développement d’un système sécurisé de gestion des comptes utilisateur, avec protections contre les failles classiques (injections SQL, etc.).
 
    Connexion à la BDD :
@@ -63,7 +63,7 @@ Développement d’un système sécurisé de gestion des comptes utilisateur, av
 
         - admin.php → Gestion des utilisateurs via interface admin.
 
-    3. 🧠 Logique Backend des Interactions Simples :
+    3.  Logique Backend des Interactions Simples :
    
       -Développement des modules pour faciliter les interactions utilisateur.
 
@@ -73,18 +73,18 @@ Développement d’un système sécurisé de gestion des comptes utilisateur, av
 
       -admin_appointments.php → Gestion des rendez-vous (admin).
 
-🛠️ Compétences Mises en Œuvre
-  -🗃️ Conception de bases de données relationnelles (MySQL)
+ Compétences Mises en Œuvre
+  - Conception de bases de données relationnelles (MySQL)
 
-  -💻 Développement backend (PHP natif)
+  - Développement backend (PHP natif)
 
-  -🛡️ Sécurité des applications web (authentification, hachage, PDO, sessions)
+  - Sécurité des applications web (authentification, hachage, PDO, sessions)
 
-  -🔄 Intégrité des données (relations entre tables, contraintes)
+  - Intégrité des données (relations entre tables, contraintes)
 
-  -🐞 Débogage & gestion des erreurs backend
+  - Débogage & gestion des erreurs backend
 
-🚀 Tester le Projet en Local:
+ Tester le Projet en Local:
 
   -Lancer XAMPP (Apache + MySQL).
 
